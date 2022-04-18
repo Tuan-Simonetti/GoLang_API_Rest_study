@@ -5,12 +5,19 @@ Execução: go run main.go
 
 Metodos criados encontram-se no arquivo main.go:
 
-r.GET("/books", controllers.FindBooks)
+GET "/books"
 
-r.POST("/books", controllers.CreateBook)
+POST "/books"   deve ser passado o body de modelo abaixo:      
 
-r.GET("/books/:id", controllers.FindBook)
+{
+  "title": "The Infinite Game"
+  "author": "J. K. Rowling"
+}
 
-r.PATCH("/books/:id", controllers.UpdateBook)
 
-r.DELETE("/books/:id", controllers.DeleteBook)
+
+GET "/books/:id"            exemplo: localhost:8080/books/2
+
+PATCH "/books/:id"          exemplo: localhost:8080/books/2
+
+DELETE "/books/:id"         exemplo: localhost:8080/books/2
